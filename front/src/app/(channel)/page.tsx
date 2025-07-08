@@ -131,9 +131,10 @@ export default function ChannelPage() {
                 );
               } else if (data.chunk.type === "error") {
                 // エラーメッセージを表示
-                const errorMessage = data.chunk.error?.message || "不明なエラーが発生しました";
+                const errorMessage =
+                  data.chunk.error?.message || "不明なエラーが発生しました";
                 botMessageContent = `エラー: ${errorMessage}`;
-                
+
                 // ボットメッセージをエラーメッセージで更新
                 setMessages((prev) =>
                   prev.map((msg) =>
@@ -193,13 +194,6 @@ export default function ChannelPage() {
                 <p className="whitespace-pre-wrap">
                   {message.content || "（コンテンツが空です）"}
                 </p>
-                {/* デバッグ情報 */}
-                <div className="text-xs mt-1 opacity-50 border-t pt-1">
-                  <div>ID: {message.id}</div>
-                  <div>送信者: {message.sender}</div>
-                  <div>コンテンツ長: {message.content?.length || 0}</div>
-                  <div>コンテンツ: "{message.content}"</div>
-                </div>
                 <p className="text-xs mt-1 opacity-70">
                   {message.timestamp.toLocaleTimeString()}
                 </p>
