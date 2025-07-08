@@ -50,7 +50,7 @@ export default function ChannelPage() {
 
     try {
       // SSEを使用してストリーミングレスポンスを取得
-      const response = await fetch("/api/agent/stream", {
+      const response = await fetch("http://localhost:3000/agent/stream", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
